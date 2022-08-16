@@ -27,10 +27,12 @@ reseponse :-
 
 import requests
 
-def telegram_bot_sendtext(bot_message, bot_token, bot_chat_id):
+def telegram_bot_sendtext(bot_message, bot_token, chat_id):
 
    BOT_TOKEN = bot_token
-   BOT_CHAT_ID = bot_chat_id
+   # Telegram bots can't send messages to other bots by design, so you should specify chat ID of non-bot user, group or channel. 
+   # You could obtain your account ID using @userinfobot bot, just search this bot, click start and send one messsage it gives you your ID.
+   CHAT_ID = chat_id
    SEND_TEXT = 'https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + BOT_CHAT_ID + '&parse_mode=Markdown&text=' + bot_message
 
    response = requests.get(SEND_TEXT)
