@@ -36,5 +36,5 @@ def telegram_bot_sendtext(bot_message, bot_token, bot_chat_id):
    response = requests.get(SEND_TEXT)
    return response.json()
   
-test = telegram_bot_sendtext("Testing Telegram bot")
+test = telegram_bot_sendtext("Testing Telegram bot",'123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11','1112078030')
 print(test)
