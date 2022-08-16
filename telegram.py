@@ -5,7 +5,6 @@
 
 # Immediately open https://api.telegram.org/bot<token>/getMe in your web-browser , 
 # literally paste the token you received from the BotFather, complete with all the letters and punctuation.
-# Copy the chat id from the returned JSON object. Sample response from above call looks like below.
 
 # Example
 """
@@ -33,10 +32,10 @@ def telegram_bot_sendtext(bot_message, bot_token, chat_id):
    # Telegram bots can't send messages to other bots by design, so you should specify chat ID of non-bot user, group or channel. 
    # You could obtain your account ID using @userinfobot ( https://github.com/nadam/userinfobot ) bot, just search this bot, click start and send one messsage it gives you your ID.
    CHAT_ID = chat_id
-   SEND_TEXT = 'https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + BOT_CHAT_ID + '&parse_mode=Markdown&text=' + bot_message
+   SEND_TEXT = 'https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + CHAT_ID + '&parse_mode=Markdown&text=' + bot_message
 
    response = requests.get(SEND_TEXT)
    return response.json()
   
-test = telegram_bot_sendtext("Testing Telegram bot",'123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11','1112078030')
+test = telegram_bot_sendtext("Testing Telegram bot",'123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11','1112078032')
 print(test)
