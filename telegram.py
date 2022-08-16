@@ -1,13 +1,31 @@
+# Talk to @BotFather(https://t.me/BotFather). Send /newbot to them and follow the prompts. In response you will get an HTTP API token 
+# It will look something like 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
+
+# Talk to your newly created bot, it is enough to just /start it.
+
+# Immediately open https://api.telegram.org/bot<token>/getMe in your web-browser , 
+# literally paste the token you received from the BotFather, complete with all the letters and punctuation.
+# Copy the chat id from the returned JSON object. Sample response from above call looks like below.
+
+# Example
+"""
+Request :- https://api.telegram.org/bot123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11/getMe
+reseponse :-
+{
+  "ok": true,
+  "result": {
+    "id": 1112078030,
+    "is_bot": true,
+    "first_name": "bot name",
+    "username": "bot user name",
+    "can_join_groups": true,
+    "can_read_all_group_messages": false,
+    "supports_inline_queries": false
+  }
+}
+"""
+
 import requests
-
-#Talk to @BotFather(https://t.me/BotFather). Send /newbot to them and follow the prompts. In response you will get an HTTP API token 
-#(it will look something like 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11).
-
-#Talk to your newly created bot, it is enough to just /start it.
-
-#Immediately open https://api.telegram.org/bot<token>/getUpdates?offset=-1 in your web-browser 
-#(literally paste the token you received from the BotFather, complete with all the letters and punctuation). 
-#Copy the chat id from the returned JSON object.
 
 def telegram_bot_sendtext(bot_message):
 
