@@ -27,10 +27,10 @@ reseponse :-
 
 import requests
 
-def telegram_bot_sendtext(bot_message):
+def telegram_bot_sendtext(bot_message, bot_token, bot_chat_id):
 
-   BOT_TOKEN = '<your bot token>'
-   BOT_CHAT_ID = '<YOUR_BOT_CHAT_ID>'
+   BOT_TOKEN = bot_token
+   BOT_CHAT_ID = bot_chat_id
    SEND_TEXT = 'https://api.telegram.org/bot' + BOT_TOKEN + '/sendMessage?chat_id=' + BOT_CHAT_ID + '&parse_mode=Markdown&text=' + bot_message
 
    response = requests.get(SEND_TEXT)
